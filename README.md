@@ -1,2 +1,2 @@
 ## Notes
-- So far I have tested the Hyperscan API and seen some pretty impressive performace gains. Initally I wasn't sure there would be a gain but it seems to be about 2x-5x faster.
+- 28/10/19 | So far I have tested the Hyperscan API using simplegrep.c and have seen some pretty impressive performace gains. Initally I wasn't sure the gain would be +35% but it seems to be about +200% to +500% faster.

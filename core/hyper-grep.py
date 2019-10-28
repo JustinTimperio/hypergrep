@@ -51,3 +51,4 @@ def search_db():
     mode = (hyperscan.HS_MODE_BLOCK if args.block_mode
             else hyperscan.HS_MODE_STREAM)
 
+process_expression('^(19|20)\d{2}$')
