@@ -1,0 +1,12 @@
+[submodule "dev-ref/dev-ref/hyperscan-git"]
+	path = dev-ref/dev-ref/hyperscan-git
+	url = https://github.com/intel/hyperscan.git
+[submodule "dev-ref/dev-ref/p"]
+	path = dev-ref/dev-ref/p
+	url = https://github.com/darvid/python-hyperscan.git
+[submodule "dev-ref/python-hyperscan"]
+	path = dev-ref/python-hyperscan
+	url = https://github.com/darvid/python-hyperscan.git
+[submodule "dev-ref/hyperscan-git"]
+	path = dev-ref/hyperscan-git
+	url = https://github.com/intel/hyperscan.git

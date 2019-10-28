@@ -51,13 +51,3 @@ def search_db():
     mode = (hyperscan.HS_MODE_BLOCK if args.block_mode
             else hyperscan.HS_MODE_STREAM)
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Search a file using a list of list of search terms')
-    parser.add_argument('-N', '--block-mode', dest='block_mode', action='store_true', help='Benchmark in block mode.')
-    parser.add_argument('-e', '--expressions', metavar='FILE', help='Path to expressions.')
-    parser.add_argument('-f', '--file', metavar='FILE', help='Path to file for search.')
-    if len(sys.argv) == 1:
-        parser.print_help()
-        sys.exit()
-    arg = parser.parse_args()
-    main(args)
