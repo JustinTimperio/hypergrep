@@ -1,7 +1,11 @@
 ###### Complie Search Terms Into Database, Scan for Matches, and Return with Results
-import os, sys, io, hyperscan, argparse
+import os
+import sys
+import io
+import argparse
+import hyperscan
 
-### hyperscan search flags
+# hyperscan search flags
 flagchars = {
     'c': hyperscan.HS_FLAG_CASELESS,
     'd': hyperscan.HS_FLAG_DOTALL,
@@ -14,7 +18,8 @@ flagchars = {
     'L': hyperscan.HS_FLAG_SOM_LEFTMOST,
 }
 
-### Process each expresion before adding to hyperscan.db
+
+# Process each expresion before adding to hyperscan.db
 def process_expression(expr):
     expr = expr.strip()
     cpos = expr.find(':')
@@ -32,7 +37,8 @@ def process_expression(expr):
         flags |= flagchars[fc]
     return id_, expression, flags
 
-### Build hyperscan database from text file
+
+# Build hyperscan database from text file
 def build_database(expr_path, mode=hyperscan.HS_MODE_STREAM):
     ids = []
     expressions = []
@@ -46,6 +52,7 @@ def build_database(expr_path, mode=hyperscan.HS_MODE_STREAM):
     database = hyperscan.Database(mode=mode)
     database.compile(expressions=expressions, ids=ids, flags=flags,)
     return len(expressions), database
+
 
 def search_db():
     mode = (hyperscan.HS_MODE_BLOCK if args.block_mode
